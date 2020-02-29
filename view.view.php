@@ -10,6 +10,7 @@
 <table>
 	<thead>
 		<tr>
+            <th>Staff Number</th>
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Email</th>
@@ -20,15 +21,17 @@
 	</thead>    
     <tr>
     <?php while ($row = mysqli_fetch_array($result)) { ?>
-			<td><?php echo $row['firstname']; ?></td>
+
+            <td><?php echo $row['id']; ?></td>
+            <td><?php echo $row['firstname']; ?></td>
 			<td><?php echo $row['lastname']; ?></td>
             <td><?php echo $row['email']; ?></td>
 			<td><?php echo $row['role']; ?></td>
             <td>
-				<a href="index.php?edit=<?php echo $row['email']; ?>" class="edit_btn" >Edit</a>
+				<a href="update.php?edit=<?php echo $row['id']; ?>" class="edit_btn" >Edit</a>
 			</td>
 			<td>
-				<a href="server.php?del=<?php echo $row['email']; ?>" class="del_btn">Delete</a>
+				<a href="delete.php?del=<?php echo $row['id']; ?>" class="del_btn">Delete</a>
 			</td>
 		</tr>
         <?php } ?>

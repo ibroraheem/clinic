@@ -4,7 +4,7 @@ session_start();
 
 $db = mysqli_connect('localhost', 'root', '', 'login');
 
-
+$id = "";
 $firstname = "";
 $lastname = "";
 $email    = "";
@@ -163,5 +163,5 @@ function isAdmin()
 		return false;
 	}
 }
-$sql = "SELECT firstname, lastname, email, role FROM user";
+$sql = "SELECT * FROM user";
 $result = mysqli_query($db, $sql);

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<style>
 	.header {
 		background: #003366;
@@ -42,7 +42,7 @@
 					</small>
                     <small   style="color: #888;">
 						 
-                       &nbsp; <a href="staff.php"> view users</a>
+                       &nbsp; <a href="view.php"> view users</a>
 					</small>
 				<?php endif ?>
 			</div>

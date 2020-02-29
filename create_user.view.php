@@ -13,6 +13,14 @@
 	</style>
 </head>
 <body>
+<?php if (isset($_SESSION['message'])): ?>
+	<div class="msg">
+		<?php 
+			echo $_SESSION['message']; 
+			unset($_SESSION['message']);
+		?>
+	</div>
+<?php endif ?>
 	<div class="header">
 		<h2>Admin - create user</h2>
 	</div>

@@ -1,5 +1,7 @@
 <?php include('config.php'); 
 
-
-
-require 'register.view.php';
+// if (!isAdmin()) {
+//     $_SESSION['msg'] = "Access Denied";
+//     header('location: login.php');
+//}
+require 'register.view.php';    
