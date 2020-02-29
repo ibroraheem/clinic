@@ -36,13 +36,20 @@
             <td><?php echo $row['email']; ?></td>
 			<td><?php echo $row['role']; ?></td>
             <td>
-				<a href="update.php?edit=<?php echo $row['firstname']; ?>" class="edit_btn" >Edit</a>
+				<a href="views/update.view.php?edit=<?php echo $row['firstname']; ?>" class="edit_btn" >Edit</a>
 			</td>
 			<td>
-				<a href="delete.php?del=<?php echo $row['id']; ?>" class="del_btn">Delete</a>
+				<a href="../delete.php?del=<?php echo $row['id']; ?>" class="del_btn">Delete</a>
 			</td>
 		</tr>
         <?php } ?>
 </table>
+<form action="">
+<input type="hidden" name="id" value="<?php echo $id; ?>">
+<input type="text" name="firstname" value="<?php echo $firstname; ?>">
+<input type="text" name="lastname" value="<?php echo $lastname; ?>">
+<input type="email" name="email" value="<?php echo $email; ?>">
+
+</form>
 </body>
 </html>
