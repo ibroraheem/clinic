@@ -1,12 +1,9 @@
 <?php
 include('config.php');
 
-$sql = "DELETE FROM user WHERE firstname=$firstname";
-
-if (mysqli_query($db, $sql)) {
-    echo "Record deleted successfully";
-} else {
-    echo "Error deleting record: " . mysqli_error($db);
+if (isset($_GET['del'])) {
+	$id = $_GET['del'];
+	mysqli_query($db, "DELETE FROM user WHERE id=$id");
+	$_SESSION['message'] = "Address deleted!"; 
+	header('location: view.php');
 }
-
-mysqli_close($db);
