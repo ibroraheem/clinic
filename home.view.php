@@ -29,7 +29,7 @@
 			</div>
 		<?php endif ?>
 
-		<!-- logged in user information -->
+		
 		
 				<?php  if (isset($_SESSION['user'])) : ?>
 					<strong><?php echo $_SESSION['user']['firstname']; ?></strong>

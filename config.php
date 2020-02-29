@@ -1,28 +1,27 @@
 <?php 
 session_start();
 
-// connect to database
+
 $db = mysqli_connect('localhost', 'root', '', 'login');
 
-// variable declaration
+
 $firstname = "";
 $lastname = "";
 $email    = "";
 $role = "";
 $errors   = array(); 
 
-// call the register() function if register_btn is clicked
+
 if (isset($_POST['register_btn'])) {
 	register();
 }
 
-// REGISTER USER
+
 function register(){
-	// call these variables with the global keyword to make them available in function
+	
 	global $db, $firstname, $errors, $email;
 
-	// receive all input values from the form. Call the e() function
-	// defined below to escape form values
+	
 	$firstname       =  e($_POST['firstname']);
 	$lastname      =  e($_POST['lastname']);
 	$email       =  e($_POST['email']);
@@ -72,7 +71,7 @@ function register(){
 		}
 	}
 }
-// return user array from their id
+
 function getUserById($id){
 	global $db;
 	$query = "SELECT * FROM user WHERE id=" . $id;
@@ -82,7 +81,7 @@ function getUserById($id){
 	return $user;
 }
 
-// escape string
+
 function e($val){
 	global $db;
 	return mysqli_real_escape_string($db, trim($val));
@@ -116,7 +115,7 @@ if (isset($_POST['login_btn'])) {
 	login();
 }
 
-// LOGIN USER
+
 function login(){
 	global $db, $email, $errors;
 
@@ -131,15 +130,14 @@ function login(){
 		array_push($errors, "Password is required");
 	}
 
-	// attempt login if no errors on form
+	
 	if (count($errors) == 0) {
 		$password = md5($password);
 
 		$query = "SELECT * FROM user WHERE email='$email' AND password='$password' LIMIT 1";
 		$results = mysqli_query($db, $query);
 
-		if (mysqli_num_rows($results) == 1) { // user found
-			// check if user is admin or user
+		if (mysqli_num_rows($results) == 1) { 
 			$logged_in_user = mysqli_fetch_assoc($results);
 			if ($logged_in_user['role'] == 'admin') {
 
@@ -165,16 +163,5 @@ function isAdmin()
 		return false;
 	}
 }
-if (isset($_GET['edit'])) {
-	$id = $_GET['edit'];
-	$update = true;
-	$record = mysqli_query($db, "SELECT * FROM user WHERE id=$id");
-
-	if (count($record) == 1 ) {
-		$n = mysqli_fetch_array($record);
-		$firstname = $n['firstname'];
-		$lastname = $n['lastname'];
-		$email = $n['email'];
-		$role = $n['role'];
-	}
-}
+$sql = "SELECT firstname, lastname, email, role FROM user";
+$result = mysqli_query($db, $sql);
