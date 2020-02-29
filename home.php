@@ -12,4 +12,4 @@ if (isset($_GET['logout'])) {
 	header("location: login.php");
 }
 
-require 'home.view.php';
+require 'views/home.view.php';

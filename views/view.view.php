@@ -7,6 +7,14 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+<?php if (isset($_SESSION['message'])): ?>
+	<div class="msg">
+		<?php 
+			echo $_SESSION['message']; 
+			unset($_SESSION['message']);
+		?>
+	</div>
+<?php endif ?>
 <table>
 	<thead>
 		<tr>
@@ -28,7 +36,7 @@
             <td><?php echo $row['email']; ?></td>
 			<td><?php echo $row['role']; ?></td>
             <td>
-				<a href="update.php?edit=<?php echo $row['id']; ?>" class="edit_btn" >Edit</a>
+				<a href="update.php?edit=<?php echo $row['firstname']; ?>" class="edit_btn" >Edit</a>
 			</td>
 			<td>
 				<a href="delete.php?del=<?php echo $row['id']; ?>" class="del_btn">Delete</a>

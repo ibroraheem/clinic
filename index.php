@@ -5,4 +5,4 @@ if (!isLoggedIn()) {
 	header('location: login.php');
 }
 
-    require 'index.view.php';
+    require 'views/index.view.php';

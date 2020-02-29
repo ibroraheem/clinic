@@ -4,4 +4,4 @@
 //     $_SESSION['msg'] = "Access Denied";
 //     header('location: login.php');
 //}
-require 'register.view.php';    
+require 'views/register.view.php';    

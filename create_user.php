@@ -1,3 +1,3 @@
 <?php include('config.php'); 
 
-require 'create_user.view.php';
+require 'views/create_user.view.php';
