@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<style>
+	.header {
+		background: #003366;
+	}
+	button[name=register_btn] {
+		background: #003366;
+	}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<h2>Admin - Home Page</h2>
+	</div>
+	<div class="content">
+		<!-- notification message -->
+		<?php if (isset($_SESSION['success'])) : ?>
+			<div class="error success" >
+				<h3>
+					<?php 
+						echo $_SESSION['success']; 
+						unset($_SESSION['success']);
+					?>
+				</h3>
+			</div>
+		<?php endif ?>
+
+		<!-- logged in user information -->
+		
+				<?php  if (isset($_SESSION['user'])) : ?>
+					<strong><?php echo $_SESSION['user']['firstname']; ?></strong>
+
+					<small>
+						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['role']); ?>)</i> 
+						<br>
+						<a href="home.php?logout='1'" style="color: red;">logout</a>
+                       &nbsp; <a href="create_user.php"> + add user</a>
+					</small>
+                    <small   style="color: #888;">
+						 
+                       &nbsp; <a href="staff.php"> view users</a>
+					</small>
+				<?php endif ?>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
