@@ -22,7 +22,7 @@
 	</div>
 <?php endif ?>
 	<div class="header">
-		<h2>Admin - create user</h2>
+		<h2>Register Staff</h2>
 	</div>
 	
 	<form method="post" action="create_user.php">
@@ -31,19 +31,19 @@
 
 		<div class="input-group">
 			<label>First Name</label>
-			<input type="text" name="firstname" value="<?php echo $firstname; ?>">
+			<input type="text" name="firstname" value="<?php echo $firstname; ?>" required>
 		</div>
         <div class="input-group">
 			<label>Last Name</label>
-			<input type="text" name="lastname" value="<?php echo $lastname; ?>">
+			<input type="text" name="lastname" value="<?php echo $lastname; ?>" required>
 		</div>
 		<div class="input-group">
 			<label>Email</label>
-			<input type="email" name="email" value="<?php echo $email; ?>">
+			<input type="email" name="email" value="<?php echo $email; ?>" required>
 		</div>
 		<div class="input-group">
 			<label>Role</label>
-			<select name="role" id="role" >
+			<select name="role" id="role" required>
 				<option value=""></option>
 				<option value="admin">Admin</option>
                 <option value="doctor">Doctor</option>
