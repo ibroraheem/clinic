@@ -17,7 +17,7 @@
 		<h2>Admin - Home Page</h2>
 	</div>
 	<div class="content">
-		<!-- notification message -->
+		
 		<?php if (isset($_SESSION['success'])) : ?>
 			<div class="error success" >
 				<h3>

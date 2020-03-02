@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	
 <?php if (isset($_SESSION['message'])): ?>
 	<div class="msg">
 		<?php 
