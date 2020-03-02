@@ -73,4 +73,5 @@ function register(){
 		}
 	}
 }
+
 require 'views/create_user.view.php';
