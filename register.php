@@ -4,6 +4,14 @@
 //     $_SESSION['msg'] = "Access Denied";
 //     header('location: login.php');
 //}
+function getUserById($id){
+	global $db;
+	$query = "SELECT * FROM user WHERE id=" . $id;
+	$result = mysqli_query($db, $query);
+
+	$user = mysqli_fetch_assoc($result);
+	return $user;
+}
 function e($val){
 	global $db;
 	return mysqli_real_escape_string($db, trim($val));

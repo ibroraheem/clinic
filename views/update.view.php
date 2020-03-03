@@ -39,7 +39,7 @@ while ($res=mysqli_fetch_array($result)) {
     </div>
     <div class="input-group">
         <label>Role</label>
-    <select name="Role" required>
+    <select name="role" required>
         <option value=""></option>
         <option value="Admin">Admin</option>
         <option value="Doctor">Doctor</option>

@@ -13,6 +13,13 @@
 	</style>
 </head>
 <body>
+<form action="search.php" method="post">
+	<div class="input-group">
+		
+		<input type="search" name="search" placeholder="Enter Search term">
+		<input type="submit" value="Search">
+	</div>
+	</form>
 	<div class="header">
 		<h2>Admin - Home Page</h2>
 	</div>
