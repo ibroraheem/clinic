@@ -18,6 +18,8 @@
 	</div>
 	<div class="content">
 		
+	
+
 		<?php if (isset($_SESSION['success'])) : ?>
 			<div class="error success" >
 				<h3>

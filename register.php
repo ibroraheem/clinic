@@ -80,12 +80,4 @@ function register(){
 	}
 }
 
-function getUserById($id){
-	global $db;
-	$query = "SELECT * FROM user WHERE id=" . $id;
-	$result = mysqli_query($db, $query);
-
-	$user = mysqli_fetch_assoc($result);
-	return $user;
-}
 require 'views/register.view.php';    

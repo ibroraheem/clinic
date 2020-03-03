@@ -58,16 +58,6 @@
             border: 1px solid gray;
         }
         
-        #user_type {
-            height: 40px;
-            width: 98%;
-            padding: 5px 10px;
-            background: white;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid gray;
-        }
-        
         .btn {
             padding: 10px;
             font-size: 15px;
@@ -93,14 +83,6 @@
             background: #dff0d8;
             border: 1px solid #3c763d;
             margin-bottom: 20px;
-        }
-        
-        .profile_info img {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            margin: 5px;
-            float: left;
         }
         
         .profile_info div {
@@ -150,15 +132,4 @@
             color: white;
             border-radius: 3px;
             background: #800000;
-        }
-        
-        .msg {
-            margin: 30px auto;
-            padding: 10px;
-            border-radius: 5px;
-            color: #3c763d;
-            background: #dff0d8;
-            border: 1px solid #3c763d;
-            width: 50%;
-            text-align: center;
         }
