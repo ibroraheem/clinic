@@ -8,6 +8,7 @@ function isLoggedIn()
 		return false;
 	}
 }
+
 if (isset($_GET['logout'])) {
 	session_destroy();
 	unset($_SESSION['user']);
@@ -20,5 +21,6 @@ if (!isLoggedIn()) {
 	$_SESSION['msg'] = "You must log in first";
 	header('location: login.php');
 }
+
 
     require 'views/index.view.php';

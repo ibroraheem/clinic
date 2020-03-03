@@ -1,4 +1,11 @@
 <?php include('config.php');
+function e($val){
+	global $db;
+	return mysqli_real_escape_string($db, trim($val));
+}
+if (isset($_POST['login_btn'])) {
+	login();
+}
 function login(){
 	global $db, $email, $errors;
 
@@ -22,7 +29,7 @@ function login(){
 
 		if (mysqli_num_rows($results) == 1) { 
 			$logged_in_user = mysqli_fetch_assoc($results);
-			if ($logged_in_user['role'] == 'admin') {
+			if ($logged_in_user['role'] == 'Admin') {
 
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
@@ -38,4 +45,6 @@ function login(){
 		}
 	}
 }
+
+
 require 'views/login.view.php';
