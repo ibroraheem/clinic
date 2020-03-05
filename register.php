@@ -1,5 +1,5 @@
 <?php include('config.php'); 
-
+$id = ""; $firstname = ""; $lastname = ""; $email    = ""; $role = ""; $errors   = array(); 
 // if (!isAdmin()) {
 //     $_SESSION['msg'] = "Access Denied";
 //     header('location: login.php');

@@ -1,23 +1,22 @@
 <?php
-include('config.php');
+$db = mysqli_connect('localhost', 'root', '', 'login');
 
-$output = '';
 if(isset($_POST['search'])){
-    $search = $_POST['search'];
-    $sql = mysqli_query($db, "SELECT * FROM user WHERE id LIKE '$search' OR firstname LIKE '$search' OR lastname LIKE '$search' OR email LIKE '$search' LIKE role = '$search'");
-    $count = mysqli_num_rows($sql);
-    if ($count >0){
-        while ($row = mysqli_fetch_array($sql)) {
-            $row['id'];
-            $row['firstname'];
-            $row['lastname'];
-            $row['email'];
-            $row['role'];
-        }
-    }else {
-        $message = "There is No Employee with Such Details";
-        echo $message;
-        }
+    $search = mysqli_real_escape_string($db, $_POST['search']);
+    $sql = "SELECT * FROM user WHERE firstname LIKE '%$search%' OR lastname LIKE '%$search%' OR email LIKE '%$search%' OR role LIKE '%$search%'";
+    $result = mysqli_query($db, $sql);
+    $queryResult = mysqli_num_rows($result);
 
+    if($queryResult > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            $row['id']; 
+            $row['firstname']; 
+			$row['lastname'];
+            $row['email']; 
+			$row['role']; 
+        }
+    } else{
+        echo "There is no Employee with such detail";
     }
+}
 require 'views/searchresults.view.php';

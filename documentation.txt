@@ -1,0 +1,7 @@
+How to USe The Clinic APP
+
+1. Open Config.php
+2. Change the database parameters to yours to establish database connection
+3. Once done access register.php and register
+4. After registration, goto your database table, change the role of the registered user to "Admin"
+5. Login and voila.... to avoid other users from gaining access to register.php Uncomment the commented if statement.
